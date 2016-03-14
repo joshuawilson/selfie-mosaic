@@ -1,7 +1,7 @@
 {
-  "name": "Picture Mosaic",
+  "name": "PictureMosaic",
   "version": "1.0.0",
-  "description": "Does it rain app",
+  "description": "Demo app",
   "main": "Gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
