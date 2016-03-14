@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
+html {
+  height: 100%;
+  background-color: #888;
+  background-image: -webkit-linear-gradient(top, #888 0%, #555 100%);
+  background-image: linear-gradient(to bottom, #888 0%, #555 100%); }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  height: 100%;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 1s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  transition: all 1s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  opacity: .3; }
+  body.rain {
+    opacity: 1;
+    background-color: #888;
+    background-image: -webkit-linear-gradient(top, #ff2a68 0%, #ff5e3a 100%);
+    background-image: linear-gradient(to bottom, #ff2a68 0%, #ff5e3a 100%); }
+  body.no-rain {
+    opacity: 1;
+    background-color: #888;
+    background-image: -webkit-linear-gradient(top, #1ad5fd 0%, #1d63f0 100%);
+    background-image: linear-gradient(to bottom, #1ad5fd 0%, #1d63f0 100%); }
+
+.information {
+  line-height: 1.3em;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 32px;
+  right: 32px;
+  font-size: 2.5em; }
+
+.loader {
+  font-size: 0.5em; }
+  .show .loader {
+    display: none; }
+
+.text {
+  display: block;
+  -webkit-transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transform: translate3d(0, -2em, 0);
+          transform: translate3d(0, -2em, 0);
+  -webkit-filter: blur(0px) opacity(0);
+          filter: blur(0px) opacity(0); }
+  .show .text {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-filter: blur(0px) opacity(100%);
+            filter: blur(0px) opacity(100%); }
+
+.location {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  -webkit-filter: blur(10px) opacity(0);
+          filter: blur(10px) opacity(0); }
+  .show .location {
+    -webkit-filter: blur(0px) opacity(100%);
+            filter: blur(0px) opacity(100%); }
+
+.weather-icon {
+  margin: -100px 0 -10px -20px;
+  -webkit-filter: invert(100%) blur(10px) opacity(0);
+          filter: invert(100%) blur(10px) opacity(0);
+  -webkit-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  transition: all 2s cubic-bezier(0.19, 1, 0.22, 1) 1s; }
+  .show .weather-icon {
+    -webkit-filter: invert(100%) blur(0px) opacity(100%);
+            filter: invert(100%) blur(0px) opacity(100%); }
