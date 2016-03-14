@@ -1,30 +1,34 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
-.color {
+body {
+  font-family: 'Open Sans', sans-serif; }
+
+.picture {
   display: inline-block;
   position: relative; }
-  .color img {
+  .picture img {
     display: block;
-    left: 0;
-    top: 0;
-    z-index: -1; }
-  .color:before {
+    height: 128px;
+    width: 128px; }
+  .picture:before {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: 2; }
-  .color.red:before {
+    z-index: 1; }
+  .picture.red:before {
     mix-blend-mode: color;
-    background: red;
-    -webkit-filter: opacity(50%);
-            filter: opacity(50%); }
-  .color.black:before {
-    mix-blend-mode: multiply;
-    background: #ccc;
-    -webkit-filter: brightness(0.8);
-            filter: brightness(0.8); }
-  .color.white:before {
-    mix-blend-mode: screen;
-    background: #888; }
+    background: #cc0000; }
+  .picture.black {
+    -webkit-filter: brightness(0.6) grayscale(0.2) contrast(1.5);
+            filter: brightness(0.6) grayscale(0.2) contrast(1.5); }
+    .picture.black:before {
+      mix-blend-mode: multiply;
+      background: silver; }
+  .picture.white {
+    -webkit-filter: brightness(1.5) grayscale(0.2) contrast(1.5);
+            filter: brightness(1.5) grayscale(0.2) contrast(1.5); }
+    .picture.white:before {
+      mix-blend-mode: exclusion;
+      background: #111; }

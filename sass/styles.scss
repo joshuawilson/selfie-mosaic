@@ -2,14 +2,17 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
 
-.color{
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+.picture{
   display: inline-block;
   position: relative;
+
   img{
     display:block;
-    left:0;
-    top:0;
-    z-index:-1;
+    height: 128px;
+    width: 128px;
   }
   &:before{
     content:"";
@@ -18,20 +21,26 @@
     right:0;
     top:0;
     bottom:0;
-    z-index:2;
+    z-index:1;
   }
-  &.red:before{
-   mix-blend-mode:color;
-   background: red;
-   filter: opacity(50%);
+  &.red{
+    &:before{
+      mix-blend-mode: color;
+      background: #cc0000;
+    }
   }
-  &.black:before{
-    mix-blend-mode:multiply;
-    background: #ccc;
-    filter: brightness(0.8);
+  &.black{
+    filter: brightness(.6) grayscale(.2) contrast(1.5);
+    &:before{
+      mix-blend-mode:multiply;
+      background: silver;
+    }
   }
-   &.white:before{
-    mix-blend-mode:screen;
-    background: #888;
+   &.white{
+     filter: brightness(1.5) grayscale(.2) contrast(1.5);
+     &:before{
+       mix-blend-mode: exclusion;
+       background: #111;
+    }
   }
 }
