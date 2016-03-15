@@ -2,33 +2,69 @@
 body {
   font-family: 'Open Sans', sans-serif; }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes drop {
+  0% {
+    -webkit-transform: scale3d(2, 2, 2);
+            transform: scale3d(2, 2, 2);
+    -webkit-filter: brightness(1) grayscale(0) contrast(1);
+            filter: brightness(1) grayscale(0) contrast(1); } }
+
+@keyframes drop {
+  0% {
+    -webkit-transform: scale3d(2, 2, 2);
+            transform: scale3d(2, 2, 2);
+    -webkit-filter: brightness(1) grayscale(0) contrast(1);
+            filter: brightness(1) grayscale(0) contrast(1); } }
+
+br {
+  clear: both; }
+
 .picture {
+  float: left;
   display: inline-block;
-  position: relative; }
+  position: relative;
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+  -webkit-animation: drop 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          animation: drop 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   .picture img {
     display: block;
-    height: 128px;
-    width: 128px; }
-  .picture:before {
-    content: "";
+    height: 100px;
+    width: 100px; }
+  .picture .picture-mask {
+    background: red;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: 1; }
-  .picture.red:before {
+    z-index: 1;
+    -webkit-animation: fadeIn 1.5s ease-in;
+            animation: fadeIn 1.5s ease-in; }
+  .picture.red .picture-mask {
     mix-blend-mode: color;
-    background: #cc0000; }
+    background-color: #cc0000; }
   .picture.black {
     -webkit-filter: brightness(0.6) grayscale(0.2) contrast(1.5);
             filter: brightness(0.6) grayscale(0.2) contrast(1.5); }
-    .picture.black:before {
+    .picture.black .picture-mask {
       mix-blend-mode: multiply;
       background: silver; }
   .picture.white {
     -webkit-filter: brightness(1.5) grayscale(0.2) contrast(1.5);
             filter: brightness(1.5) grayscale(0.2) contrast(1.5); }
-    .picture.white:before {
+    .picture.white .picture-mask {
       mix-blend-mode: exclusion;
       background: #111; }
