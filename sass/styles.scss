@@ -34,8 +34,8 @@ br{
   animation: drop 1s $easeInOutBack;
   img{
     display:block;
-    height: 100px;// TODO: this is just to make sure the isze is correct, the image should be the exact size we want it.
-    width: 100px;
+    height: 15px;// TODO: this is just to make sure the isze is correct, the image should be the exact size we want it.
+    width: 15px;
   }
   .picture-mask{
     background: red;
@@ -67,4 +67,12 @@ br{
        background: #111;
     }
   }
+}
+canvas {
+  visibility: hidden;
+}
+
+html, body, #map {
+  height: 100%;
+  width: 100%;
 }

@@ -41,8 +41,8 @@ br {
           animation: drop 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   .picture img {
     display: block;
-    height: 100px;
-    width: 100px; }
+    height: 15px;
+    width: 15px; }
   .picture .picture-mask {
     background: red;
     position: absolute;
@@ -68,3 +68,10 @@ br {
     .picture.white .picture-mask {
       mix-blend-mode: exclusion;
       background: #111; }
+
+canvas {
+  visibility: hidden; }
+
+html, body, #map {
+  height: 100%;
+  width: 100%; }
