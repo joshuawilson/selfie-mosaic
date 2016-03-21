@@ -54,14 +54,12 @@
     var radius = Math.min(width, height) / 2;
     for (var x = 0; x < width; x+=pixelSize) {
       for (var y = 0; y < height; y+=pixelSize) {
-        // if (Math.pow((x-width/2), 2) + Math.pow((y-height/2), 2) <= Math.pow(radius, 2)) {
-        //   var delay = Math.floor(Math.random() * (1000));
-        //   setTimeout(function (x, y) {
-        //     return function() {
-              drawSelfie(x,y, pixelSize);
-        //     }
-        //   }(x,y), delay);
-        // };
+        var delay = Math.floor(Math.random() * (20000));
+        setTimeout(function (x, y) {
+          return function() {
+           drawSelfie(x,y, pixelSize);
+          }
+        }(x,y), delay);
       }
     }
   }
