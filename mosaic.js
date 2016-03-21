@@ -68,7 +68,7 @@
 
   var canvas = document.getElementsByTagName('canvas')[0];
   var context = canvas.getContext('2d');
-  var width = 2500;
+  var width = 1800;
 
   var source = new Image();
   source.src = '/redhat.svg';
@@ -79,6 +79,6 @@
     canvas.width=width; canvas.height=height;
     context.imageSmoothingEnabled = false;
     context.drawImage(source,0,0, width, height);
-    fillLogo(height, height);
+    fillLogo(width, height);
   }
 })()
