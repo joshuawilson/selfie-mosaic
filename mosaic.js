@@ -10,7 +10,7 @@
   ]
 
   var selfieImage = (function() {
-    var html = '<div class="picture"><div class="picture-mask"><img></div></div>';
+    var html = '<div class="picture"><div class="picture-mask"></div><img></div>';
     var documentFragment = document.createDocumentFragment();
     var element = document.createElement('div');
     element.innerHTML = html;
@@ -27,11 +27,12 @@
 
     var selfie = selfieImage.cloneNode(true);
     var div = selfie.childNodes[0];
-    var img = div.childNodes[0].childNodes[0];
+    var img = div.childNodes[1];
     img.src=selfies[Math.floor(Math.random() * (selfies.length))];
     div.style.left=(x-pixelSize)+'px';
     div.style.top=(y-pixelSize)+'px';
-    if (pixelData[3] < 1) {
+    // [r, g, b, a]
+    if (pixelData[3] < 1) { // transparent
       div.classList.add('white');
     } else if (lightness < 15) {
       div.classList.add('black');

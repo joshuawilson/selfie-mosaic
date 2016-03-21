@@ -34,7 +34,7 @@ br {
 .picture {
   float: left;
   display: inline-block;
-  position: relative;
+  position: absolute;
   -webkit-transform: scale3d(1, 1, 1);
           transform: scale3d(1, 1, 1);
   -webkit-animation: drop 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -68,6 +68,9 @@ br {
     .picture.white .picture-mask {
       mix-blend-mode: exclusion;
       background: #111; }
+
+#map {
+  position: relative; }
 
 canvas {
   visibility: hidden; }

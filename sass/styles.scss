@@ -29,7 +29,7 @@ br{
 .picture{
   float: left; // TODO: delete
   display: inline-block;
-  position: relative;
+  position: absolute;
   transform: scale3d(1, 1, 1);
   animation: drop 1s $easeInOutBack;
   img{
@@ -68,6 +68,11 @@ br{
     }
   }
 }
+
+#map {
+  position: relative;
+}
+
 canvas {
   visibility: hidden;
 }
