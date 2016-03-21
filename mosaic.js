@@ -36,10 +36,12 @@
       div.classList.add('white');
     } else if (lightness < 15) {
       div.classList.add('black');
-    } else if (lightness > (255 * 3) - 15) {
+    } else if (lightness > (255 * 3) - 15 * 3) {
       div.classList.add('white');
-    } else {
+    } else if ( pixelData[0] > 200 && pixelData[1] < 100 && pixelData[2] < 100 ) {
       div.classList.add('red');
+    } else {
+      div.classList.add('white');
     }
     img.onload = function(){
       imageMap.appendChild(div);
@@ -52,14 +54,14 @@
     var radius = Math.min(width, height) / 2;
     for (var x = 0; x < width; x+=pixelSize) {
       for (var y = 0; y < height; y+=pixelSize) {
-        if (Math.pow((x-width/2), 2) + Math.pow((y-height/2), 2) <= Math.pow(radius, 2)) {
-          var delay = Math.floor(Math.random() * (1000));
-          setTimeout(function (x, y) {
-            return function() {
+        // if (Math.pow((x-width/2), 2) + Math.pow((y-height/2), 2) <= Math.pow(radius, 2)) {
+        //   var delay = Math.floor(Math.random() * (1000));
+        //   setTimeout(function (x, y) {
+        //     return function() {
               drawSelfie(x,y, pixelSize);
-            }
-          }(x,y), delay);
-        };
+        //     }
+        //   }(x,y), delay);
+        // };
       }
     }
   }
