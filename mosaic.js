@@ -9,6 +9,8 @@
     '/selfies/zack415.jpg'
   ]
 
+  var selfieSize = 15;
+
   var selfieImage = (function() {
     var html = '<div class="picture"><div class="picture-mask"></div><img></div>';
     var documentFragment = document.createDocumentFragment();
@@ -49,12 +51,12 @@
   }
 
   function fillLogo(width, height) {
-    var pixelSize = 15;
+    var pixelSize = selfieSize;
     console.log(width, height, pixelSize);
     var radius = Math.min(width, height) / 2;
     for (var x = 0; x < width; x+=pixelSize) {
       for (var y = 0; y < height; y+=pixelSize) {
-        var delay = Math.floor(Math.random() * (20000));
+        var delay = Math.floor(Math.random() * (40000));
         setTimeout(function (x, y) {
           return function() {
            drawSelfie(x,y, pixelSize);
