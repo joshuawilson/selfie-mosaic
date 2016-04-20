@@ -4,14 +4,34 @@
   "description": "Demo app",
   "main": "Gulpfile.js",
   "scripts": {
+    "start": "npm run build && npm run serve",
+    "serve": "node server/server.js",
+    "build": "npm run js-build & npm run sass",
+    "watch": "npm run js-watch & npm run sass-watch & npm run server-watch & npm run livereload & opener http://localhost:8081",
+    "js-build": "browserify client/app/main.js > client/app/bundle.js",
+    "js-watch": "watchify client/app/main.js -o client/app/bundle.js -dv",
+    "sass": "node-sass client/sass/style.scss client/css/style.css",
+    "sass-watch": "nodemon -e scss -w client/sass -x 'npm run sass'",
+    "server-watch": "nodemon -w server server/server.js",
+    "livereload": "node scripts/livereload",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "4.4.2"
+  },
   "devDependencies": {
-    "browser-sync": "^2.10.1",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-sass": "^2.1.1"
+    "browserify": "^13.0.0",
+    "node-sass": "^3.2.0",
+    "node-watch": "^0.3.4",
+    "nodemon": "^1.4.0",
+    "opener": "^1.4.1",
+    "tiny-lr": "^0.2.1",
+    "watchify": "^3.3.1"
+  },
+  "dependencies": {
+    "lodash": "^4.11.1",
+    "restify": "^4.0.4"
   }
 }

@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
+body {
+  font-family: 'Open Sans', sans-serif; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes drop {
+  0% {
+    transform: scale3d(2, 2, 2);
+    filter: brightness(1) grayscale(0) contrast(1); } }
+
+br {
+  clear: both; }
+
+.picture {
+  float: left;
+  display: inline-block;
+  position: absolute;
+  transform: scale3d(1, 1, 1);
+  animation: drop 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  .picture img {
+    display: block;
+    height: 15px;
+    width: 15px; }
+  .picture .picture-mask {
+    background: red;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    animation: fadeIn 1.5s ease-in; }
+  .picture.red .picture-mask {
+    mix-blend-mode: color;
+    background-color: #cc0000; }
+  .picture.black {
+    filter: brightness(0.6) grayscale(0.2) contrast(1.5); }
+    .picture.black .picture-mask {
+      mix-blend-mode: multiply;
+      background: silver; }
+  .picture.white {
+    filter: brightness(1.5) grayscale(0.2) contrast(1.5); }
+    .picture.white .picture-mask {
+      mix-blend-mode: exclusion;
+      background: #111; }
+
+#map {
+  position: relative; }
+
+canvas {
+  visibility: hidden; }
+
+html, body, #map {
+  height: 100%;
+  width: 100%; }
