@@ -1,7 +1,7 @@
 {
-  "name": "PictureMosaic",
+  "name": "SelfieMosaic",
   "version": "1.0.0",
-  "description": "Demo app",
+  "description": "Build a mosaic out of a collection of selfies",
   "main": "Gulpfile.js",
   "scripts": {
     "start": "npm run build && npm run serve",
