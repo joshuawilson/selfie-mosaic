@@ -2,16 +2,31 @@
 body {
   font-family: 'Open Sans', sans-serif; }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 @keyframes fadeIn {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
 
+@-webkit-keyframes drop {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+    -webkit-filter: brightness(1) grayscale(0) contrast(1);
+            filter: brightness(1) grayscale(0) contrast(1); } }
+
 @keyframes drop {
   0% {
-    transform: scale3d(2, 2, 2);
-    filter: brightness(1) grayscale(0) contrast(1); } }
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+    -webkit-filter: brightness(1) grayscale(0) contrast(1);
+            filter: brightness(1) grayscale(0) contrast(1); } }
 
 br {
   clear: both; }
@@ -20,12 +35,14 @@ br {
   float: left;
   display: inline-block;
   position: absolute;
-  transform: scale3d(1, 1, 1);
-  animation: drop 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  -webkit-transform: scale3d(0.2, 0.2, 0.2);
+          transform: scale3d(0.2, 0.2, 0.2);
+  -webkit-animation: drop 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          animation: drop 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   .picture img {
     display: block;
-    height: 15px;
-    width: 15px; }
+    height: 50px;
+    width: 50px; }
   .picture .picture-mask {
     background: red;
     position: absolute;
@@ -34,17 +51,20 @@ br {
     top: 0;
     bottom: 0;
     z-index: 1;
-    animation: fadeIn 1.5s ease-in; }
+    -webkit-animation: fadeIn 1.5s ease-in;
+            animation: fadeIn 1.5s ease-in; }
   .picture.red .picture-mask {
     mix-blend-mode: color;
     background-color: #cc0000; }
   .picture.black {
-    filter: brightness(0.6) grayscale(0.2) contrast(1.5); }
+    -webkit-filter: brightness(0.6) grayscale(0.2) contrast(1.5);
+            filter: brightness(0.6) grayscale(0.2) contrast(1.5); }
     .picture.black .picture-mask {
       mix-blend-mode: multiply;
       background: silver; }
   .picture.white {
-    filter: brightness(1.5) grayscale(0.2) contrast(1.5); }
+    -webkit-filter: brightness(1.5) grayscale(0.2) contrast(1.5);
+            filter: brightness(1.5) grayscale(0.2) contrast(1.5); }
     .picture.white .picture-mask {
       mix-blend-mode: exclusion;
       background: #111; }
@@ -52,8 +72,14 @@ br {
 #map {
   position: relative; }
 
-canvas {
+#source {
   visibility: hidden; }
+
+#target {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1000; }
 
 html, body, #map {
   height: 100%;

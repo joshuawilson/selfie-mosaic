@@ -18,7 +18,7 @@ body {
 
 @keyframes drop {
   0% {
-    transform: scale3d(2, 2, 2);
+    transform: scale3d(1, 1, 1);
     filter: brightness(1) grayscale(0) contrast(1);
   }
 }
@@ -30,12 +30,12 @@ br {
   float: left; // TODO: delete
   display: inline-block;
   position: absolute;
-  transform: scale3d(1, 1, 1);
+  transform: scale3d(0.2, 0.2, 0.2);
   animation: drop 1s $easeInOutBack;
   img {
     display:block;
-    height: 15px;
-    width: 15px;
+    height: 50px;
+    width: 50px;
   }
   .picture-mask {
     background: red;
@@ -73,8 +73,15 @@ br {
   position: relative;
 }
 
-canvas {
+#source {
   visibility: hidden;
+}
+
+#target {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: -1000
 }
 
 html, body, #map {
