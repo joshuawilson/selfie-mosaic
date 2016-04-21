@@ -3,7 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
 $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-body{
+body {
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -23,21 +23,21 @@ body{
   }
 }
 
-br{
+br {
   clear: both;  // TODO: delete
 }
-.picture{
+.picture {
   float: left; // TODO: delete
   display: inline-block;
   position: absolute;
   transform: scale3d(1, 1, 1);
   animation: drop 1s $easeInOutBack;
-  img{
+  img {
     display:block;
     height: 15px;
     width: 15px;
   }
-  .picture-mask{
+  .picture-mask {
     background: red;
     position: absolute;
     left:0;
@@ -47,24 +47,24 @@ br{
     z-index:1;
     animation: fadeIn 1.5s ease-in;
   }
-  &.red{
-    & .picture-mask{
+  &.red {
+    & .picture-mask {
       mix-blend-mode: color;
       background-color: #cc0000;
     }
   }
-  &.black{
+  &.black {
     filter: brightness(.6) grayscale(.2) contrast(1.5);
     & .picture-mask{
       mix-blend-mode:multiply;
       background: silver;
     }
   }
-   &.white{
-     filter: brightness(1.5) grayscale(.2) contrast(1.5);
-     & .picture-mask{
-       mix-blend-mode: exclusion;
-       background: #111;
+  &.white {
+    filter: brightness(1.5) grayscale(.2) contrast(1.5);
+    & .picture-mask {
+      mix-blend-mode: exclusion;
+      background: #111;
     }
   }
 }
