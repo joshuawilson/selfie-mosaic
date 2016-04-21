@@ -1,5 +1,10 @@
-# Picrure mosaic
+# Selfie Mosaic
 
-``npm install``
+## Setup
+`npm install`
 
-``gulp``
+## Run the selfie mosaic demo
+`npm start`
+
+## Develop the selfie mosaic demo
+`npm run watch`
